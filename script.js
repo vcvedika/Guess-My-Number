@@ -9,7 +9,11 @@ document.querySelector("#check").addEventListener("click", function () {
   const guess = Number(document.querySelector("#guess").value);//obtaining the number entered in the textbox
   if (!guess) {
     displayMessage("⛔️ No number!");//pop up if we guessed wrong
-  } else if (guess === secretNumber) {
+  } 
+  else if (guess>20 || guess<0)
+  {
+    displayMessage("⛔️ Enter number within the range");
+  }else if (guess === secretNumber) {
     displayMessage("🎉 Correct!");// pop up if we guessed the correct number
     if (score > highscore) {
       highscore = score;// updating highscore if the current score exceeds it
